@@ -14,7 +14,7 @@ export default ({ mode }: { mode: string }) => {
     assetsInclude: ["**/*.png", "**/*.svg"],
     plugins: [react(), svgr()],
     root: SRC_DIR,
-    base: "https://github.com/TienLD-0801/soa-app-test/",
+    base: "/soa-app-test/",
     publicDir: PUBLIC_DIR,
     build: {
       cssMinify: "lightningcss",
