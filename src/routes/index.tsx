@@ -1,11 +1,19 @@
-import { createBrowserRouter, RouteObject } from "react-router-dom";
-import { ROUTE_PATH } from "../shared/constants";
-import HomePage from "@/pages/Home";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from 'react-router-dom';
 
-const router: RouteObject[] = [
-  { path: ROUTE_PATH.home, element: <HomePage /> },
-];
+import HomePage from '@/pages/Home';
 
-export const myRouter = createBrowserRouter(router);
-
-export const goTo = myRouter.navigate;
+export const myRouter = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<HomePage />} />
+      <Route path="*" element={<div>Error</div>} />
+    </>
+  ),
+  {
+    basename: '/soa-app-test',
+  }
+);
