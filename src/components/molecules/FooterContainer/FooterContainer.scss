@@ -1,0 +1,84 @@
+@use "@/global.scss" as *;
+
+.footer-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: $spacing-lg $spacing-md;
+  box-sizing: border-box;
+
+  @include respond-to("tablet-landscape") {
+    padding: $spacing-md $spacing-md;
+  }
+
+  @include respond-to("tablet-portrait") {
+    padding: $spacing-md $spacing-sm;
+  }
+
+  @include respond-to("mobile") {
+    padding: $spacing-sm $spacing-sm;
+  }
+
+  .footer-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+
+    @include respond-to("tablet-portrait") {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include respond-to("mobile") {
+      font-size: 15px;
+      line-height: 20px;
+      margin-bottom: $spacing-sm;
+    }
+
+    .ant-typography {
+      display: block;
+      margin-bottom: 8px;
+    }
+  }
+
+  .footer-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: $spacing-md;
+
+    @include respond-to("tablet-portrait") {
+      margin-bottom: $spacing-sm;
+      gap: 8px;
+    }
+
+    @include respond-to("mobile") {
+      gap: 6px;
+      margin-bottom: $spacing-sm;
+    }
+
+    .footer-link {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      padding: 2px 0;
+
+      @include respond-to("tablet-portrait") {
+        font-size: 16px;
+      }
+
+      @include respond-to("mobile") {
+        font-size: 15px;
+      }
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+}

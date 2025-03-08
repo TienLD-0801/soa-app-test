@@ -1,0 +1,22 @@
+@use "@/global.scss" as *;
+
+.responsive-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  &.full-width {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  @include respond-to("tablet-portrait") {
+    padding: 0 16px;
+  }
+
+  @include respond-to("mobile") {
+    padding: 0 12px;
+  }
+}

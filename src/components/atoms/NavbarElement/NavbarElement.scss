@@ -1,0 +1,80 @@
+@use "@/global.scss" as *;
+
+.navbar-element {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    .icon-container {
+      transform: translateY(-2px);
+    }
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    @include respond-to("tablet-portrait") {
+      width: 42px;
+      height: 42px;
+    }
+
+    @include respond-to("mobile") {
+      width: 36px;
+      height: 36px;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+
+      @include respond-to("mobile") {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .element-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    transition: color 0.3s ease;
+
+    @include respond-to("mobile") {
+      font-size: 12px;
+    }
+  }
+}
+
+.navbar {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1240px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  justify-content: space-around;
+  background-color: transparent;
+
+  @include respond-to("tablet-portrait") {
+    padding: 10px 16px;
+  }
+
+  @include respond-to("mobile") {
+    padding: 8px 12px;
+  }
+}

@@ -1,0 +1,146 @@
+@use "@/global.scss" as *;
+
+.adventure-card {
+  width: 100%;
+  max-width: 397px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  &__image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+
+    @include respond-to("mobile") {
+      height: 180px;
+    }
+  }
+
+  &__content {
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include respond-to("mobile") {
+      padding: 16px 12px;
+    }
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #f2542d;
+    margin: 0;
+
+    @include respond-to("mobile") {
+      font-size: 18px;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    color: #562c2c;
+    margin: 0;
+
+    @include respond-to("tablet-portrait") {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    @include respond-to("mobile") {
+      font-size: 22px;
+      line-height: 26px;
+    }
+  }
+
+  &__description {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.18px;
+    color: rgba(86, 44, 44, 0.8);
+    margin: 0;
+
+    @include respond-to("tablet-portrait") {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #fff;
+    border: 1.5px solid rgba(86, 44, 44, 0.3);
+    border-radius: 333px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    align-self: flex-start;
+
+    @include respond-to("mobile") {
+      padding: 6px 14px;
+    }
+
+    &:hover {
+      border-color: rgba(86, 44, 44, 0.5);
+      background-color: #fafafa;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &__button-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #562c2c;
+
+    @include respond-to("mobile") {
+      font-size: 16px;
+    }
+  }
+
+  &__button-icon {
+    width: 24px;
+    height: 24px;
+
+    @include respond-to("mobile") {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@include respond-to("mobile") {
+  .adventure-card {
+    border-radius: 6px;
+  }
+}

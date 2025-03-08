@@ -1,0 +1,31 @@
+@use "@/global.scss" as *;
+
+.calendar-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 24px 32px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  gap: 16px;
+  overflow-x: auto;
+  border: 1px solid rgba(86, 44, 44, 0.3);
+  box-shadow: 0px 0px 30px 0px rgba(242, 84, 45, 0.1);
+
+  @include respond-to("tablet-landscape") {
+    padding: 20px 24px;
+  }
+
+  @include respond-to("tablet-portrait") {
+    padding: 16px;
+    border-radius: 16px;
+    gap: 12px;
+  }
+
+  @include respond-to("mobile") {
+    padding: 12px 8px;
+    border-radius: 12px;
+    gap: 8px;
+  }
+}

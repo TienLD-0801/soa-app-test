@@ -1,0 +1,49 @@
+@use "@/global.scss" as *;
+
+.contact-form-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  gap: 24px;
+  box-sizing: border-box;
+  border-radius: 16px;
+
+  @include respond-to("mobile") {
+    gap: 16px;
+  }
+}
+
+.contact-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  @include respond-to("mobile") {
+    gap: 16px;
+  }
+}
+
+.input-fields-section,
+.message-editor-section,
+.file-attachment-section {
+  width: 100%;
+}
+
+.contact-form-actions {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+
+  @include respond-to("mobile") {
+    justify-content: center;
+  }
+}
+
+/* Make sure child components are responsive */
+.input-fields,
+.message-editor,
+.file-attachment {
+  width: 100%;
+}

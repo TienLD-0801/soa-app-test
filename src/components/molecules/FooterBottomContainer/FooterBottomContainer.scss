@@ -1,0 +1,134 @@
+@use "@/global.scss" as *;
+
+.footer-bottom-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-md $spacing-md;
+  background: var(--3, #562c2c);
+  box-sizing: border-box;
+
+  @include respond-to("tablet-landscape") {
+    padding: $spacing-sm $spacing-md;
+  }
+
+  @include respond-to("tablet-portrait") {
+    padding: $spacing-sm;
+  }
+
+  @include respond-to("mobile") {
+    padding: $spacing-xs $spacing-sm;
+  }
+
+  .footer-line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 0.5;
+    margin-bottom: $spacing-md;
+
+    @include respond-to("tablet-portrait") {
+      margin-bottom: $spacing-sm;
+    }
+
+    @include respond-to("mobile") {
+      margin-bottom: $spacing-xs;
+    }
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+
+    @include respond-to("mobile") {
+      flex-direction: column;
+      gap: $spacing-xs;
+    }
+
+    .footer-copyright {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #ffffff;
+
+      @include respond-to("tablet-portrait") {
+        font-size: 16px;
+      }
+
+      @include respond-to("mobile") {
+        font-size: 14px;
+        text-align: center;
+        order: 2;
+      }
+    }
+
+    .footer-social-container {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+
+      @include respond-to("mobile") {
+        gap: 12px;
+        margin-bottom: 8px;
+        order: 1;
+      }
+
+      .social-icon-button {
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+        background: #f2542d;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+
+        @include respond-to("tablet-portrait") {
+          width: 30px;
+          height: 30px;
+          padding: 4px;
+        }
+
+        @include respond-to("mobile") {
+          width: 28px;
+          height: 28px;
+          padding: 3px;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          background-color: darken(#f2542d, 10%);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+
+        .social-icon {
+          width: 24px;
+          height: 24px;
+          object-fit: contain;
+
+          @include respond-to("tablet-portrait") {
+            width: 22px;
+            height: 22px;
+          }
+
+          @include respond-to("mobile") {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

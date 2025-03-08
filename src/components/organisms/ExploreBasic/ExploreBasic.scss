@@ -1,0 +1,196 @@
+@use "@/global.scss" as *;
+
+.explore-basic {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &__background {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 666px;
+
+    @include respond-to("tablet-landscape") {
+      aspect-ratio: 16 / 10;
+    }
+
+    @include respond-to("tablet-portrait") {
+      aspect-ratio: 16 / 12;
+    }
+
+    @include respond-to("mobile") {
+      aspect-ratio: 16 / 16;
+      min-height: 400px;
+    }
+  }
+
+  &__mask {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 90%;
+    max-width: 647px;
+    padding: 0 $spacing-md;
+    box-sizing: border-box;
+
+    @include respond-to("tablet-portrait") {
+      gap: 20px;
+    }
+
+    @include respond-to("mobile") {
+      gap: 16px;
+      width: 95%;
+    }
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+
+    @include respond-to("tablet-landscape") {
+      gap: 30px;
+    }
+
+    @include respond-to("tablet-portrait") {
+      gap: 24px;
+    }
+
+    @include respond-to("mobile") {
+      gap: 16px;
+    }
+  }
+
+  &__title {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 60px;
+    text-align: center;
+    color: #562c2c;
+    width: 100%;
+    max-width: 555px;
+    margin: 0;
+    text-transform: capitalize;
+
+    @include respond-to("tablet-landscape") {
+      font-size: 44px;
+      line-height: 52px;
+    }
+
+    @include respond-to("tablet-portrait") {
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    @include respond-to("mobile") {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+  &__description {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    color: #562c2c;
+    width: 100%;
+    margin: 0;
+
+    @include respond-to("tablet-landscape") {
+      font-size: 20px;
+    }
+
+    @include respond-to("tablet-portrait") {
+      font-size: 18px;
+    }
+
+    @include respond-to("mobile") {
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    padding: 12px 40px;
+    background: #f2542d;
+    border-radius: 43px;
+    border: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #ffffff;
+    text-transform: capitalize;
+    transition: background-color 0.3s ease;
+
+    @include respond-to("tablet-portrait") {
+      padding: 10px 32px;
+      font-size: 16px;
+    }
+
+    @include respond-to("mobile") {
+      padding: 8px 24px;
+      font-size: 14px;
+    }
+
+    &:hover {
+      background: darken(#f2542d, 10%);
+    }
+  }
+
+  &__frame {
+    width: 100px;
+    height: 100px;
+
+    @include respond-to("tablet-portrait") {
+      width: 80px;
+      height: 80px;
+    }
+
+    @include respond-to("mobile") {
+      width: 60px;
+      height: 60px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__line {
+    width: 2px;
+    height: 60px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-to("mobile") {
+      height: 40px;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}

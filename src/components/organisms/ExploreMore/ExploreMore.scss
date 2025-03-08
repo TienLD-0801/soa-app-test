@@ -1,0 +1,144 @@
+@use "@/global.scss" as *;
+
+.explore-more-layout {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  @include respond-to("tablet-landscape") {
+    padding: $spacing-sm 24px;
+  }
+
+  @include respond-to("tablet-portrait") {
+    padding: $spacing-sm 20px;
+  }
+
+  @include respond-to("mobile") {
+    padding: $spacing-sm 16px;
+  }
+}
+
+.explore-more-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-lg;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+
+  @include respond-to("tablet-portrait") {
+    margin-bottom: $spacing-md;
+  }
+
+  @include respond-to("mobile") {
+    margin-bottom: $spacing-sm;
+  }
+
+  .explore-more-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: #ff5722;
+    margin: 0;
+
+    @include respond-to("tablet-portrait") {
+      font-size: 24px;
+    }
+
+    @include respond-to("mobile") {
+      font-size: 22px;
+      width: 100%;
+    }
+  }
+
+  .explore-more-button-container {
+    @include respond-to("mobile") {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.cards-container {
+  display: flex;
+  width: 100%;
+  margin-left: 0;
+  gap: $spacing-md;
+  overflow-x: auto;
+  padding-bottom: 16px;
+
+  @include respond-to("desktop") {
+    margin-left: 0;
+  }
+
+  @include respond-to("tablet-landscape") {
+    gap: $spacing-sm;
+    overflow-x: auto;
+    padding-bottom: 16px;
+  }
+
+  @include respond-to("tablet-portrait") {
+    overflow-x: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include respond-to("mobile") {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: visible;
+    width: 100%;
+    gap: $spacing-sm;
+  }
+
+  .card-wrapper {
+    flex: 0 0 auto; // Don't allow cards to grow or shrink
+    width: 340px;
+    max-width: 340px;
+
+    @include respond-to("tablet-landscape") {
+      width: 300px;
+    }
+
+    @include respond-to("tablet-portrait") {
+      width: 260px;
+      margin-bottom: $spacing-md;
+    }
+
+    @include respond-to("mobile") {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: $spacing-sm;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+:global(.explore-more-card) {
+  width: 100%;
+  height: 100%;
+
+  :global(.card-image) {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 1921px) {
+  .explore-more-layout {
+    max-width: 1600px;
+  }
+
+  .cards-container {
+    .card-wrapper {
+      max-width: 380px;
+    }
+  }
+}

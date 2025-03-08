@@ -1,0 +1,135 @@
+.experience-footer-icons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1240px;
+  min-width: 320px;
+  gap: 56px;
+  margin: 0 auto;
+
+  .icon-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    justify-content: space-around;
+
+    @media (max-width: 768px) {
+      gap: 24px;
+    }
+
+    @media (max-width: 480px) {
+      gap: 16px;
+    }
+
+    .icon-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      flex: 1 1 160px;
+      margin-bottom: 24px;
+
+      @media (max-width: 768px) {
+        flex: 1 1 130px;
+      }
+
+      @media (max-width: 480px) {
+        flex: 1 1 120px;
+        margin-bottom: 16px;
+      }
+
+      .icon-wrapper {
+        width: 58px;
+        height: 58px;
+        background-color: #0e9594;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        transition: transform 0.2s ease;
+
+        @media (max-width: 768px) {
+          width: 50px;
+          height: 50px;
+          padding: 10px;
+        }
+
+        @media (max-width: 480px) {
+          width: 44px;
+          height: 44px;
+          padding: 8px;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+          cursor: pointer;
+        }
+
+        .icon {
+          width: 34px;
+          height: 34px;
+          object-fit: contain;
+
+          @media (max-width: 768px) {
+            width: 30px;
+            height: 30px;
+          }
+
+          @media (max-width: 480px) {
+            width: 28px;
+            height: 28px;
+          }
+        }
+      }
+
+      .text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        text-align: center;
+
+        .title {
+          font-family: "Poppins", sans-serif;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 32px;
+          color: #562c2c;
+          margin: 0;
+
+          @media (max-width: 768px) {
+            font-size: 20px;
+            line-height: 28px;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+
+        .description {
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 24px;
+          color: rgba(86, 44, 44, 0.8);
+          margin: 0;
+
+          @media (max-width: 768px) {
+            font-size: 16px;
+            line-height: 22px;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

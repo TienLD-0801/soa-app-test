@@ -1,0 +1,19 @@
+@use "@/global.scss" as *;
+
+.footer-layout {
+  background: var(--3, #562c2c);
+  width: 100%;
+  overflow-x: hidden;
+
+  @include respond-to("tablet-landscape") {
+    padding: $spacing-lg 0 0;
+  }
+
+  @include respond-to("tablet-portrait") {
+    padding: $spacing-md 0 0;
+  }
+
+  @include respond-to("mobile") {
+    padding: $spacing-sm 0 0;
+  }
+}

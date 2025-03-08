@@ -1,0 +1,72 @@
+$breakpoints: (
+  "mobile": 480px,
+  "tablet-portrait": 768px,
+  "tablet-landscape": 1024px,
+  "desktop": 1240px,
+  "large-desktop": 1920px,
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+// Common spacing
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 40px;
+$spacing-xl: 60px;
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.responsive-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  &.full-width {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  @include respond-to("tablet-portrait") {
+    padding: 0 16px;
+  }
+
+  @include respond-to("mobile") {
+    padding: 0 12px;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  @include respond-to("tablet-portrait") {
+    padding: 0 16px;
+  }
+
+  @include respond-to("mobile") {
+    padding: 0 12px;
+  }
+}

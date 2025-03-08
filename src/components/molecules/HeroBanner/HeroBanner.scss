@@ -1,0 +1,77 @@
+@use "@/global.scss" as *;
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  overflow: hidden;
+
+  @include respond-to("tablet-landscape") {
+    min-height: 450px;
+  }
+
+  @include respond-to("tablet-portrait") {
+    min-height: 400px;
+  }
+
+  @include respond-to("mobile") {
+    min-height: 350px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__navbar {
+    padding-bottom: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include respond-to("tablet-landscape") {
+      padding-bottom: 60px;
+    }
+
+    @include respond-to("tablet-portrait") {
+      padding-bottom: 40px;
+    }
+
+    @include respond-to("mobile") {
+      padding-bottom: 30px;
+    }
+
+    .navbar-container {
+      width: 90%;
+      max-width: 1240px;
+      display: flex;
+      justify-content: space-between;
+
+      @include respond-to("tablet-portrait") {
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      @include respond-to("mobile") {
+        width: 100%;
+        padding: 0 16px;
+      }
+    }
+  }
+}

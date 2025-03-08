@@ -1,0 +1,39 @@
+.social-media-section-description {
+  width: 100%;
+  min-width: 320px;
+  max-width: 1264px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  p {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.24px;
+    color: #666666;
+    text-align: center;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .handle,
+  .hashtag {
+    color: #ff0000;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .social-media-section-description {
+    p {
+      font-size: 20px;
+    }
+  }
+}

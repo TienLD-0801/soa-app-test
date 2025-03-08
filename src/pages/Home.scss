@@ -1,0 +1,43 @@
+@use "@/global.scss" as *;
+
+.section {
+  width: 100%;
+  padding: $spacing-lg 0;
+
+  @include respond-to("tablet-portrait") {
+    padding: $spacing-md 0;
+  }
+
+  @include respond-to("mobile") {
+    padding: $spacing-sm 0;
+  }
+
+  &--block1 {
+    background-color: #fff;
+  }
+
+  &--block2 {
+    background-color: var(--light-bg);
+  }
+
+  &--activities {
+    background-color: #fff;
+  }
+
+  &--explore-more {
+    background-color: #fff;
+  }
+
+  &--experiences {
+    background-color: #fff;
+  }
+
+  &--social {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%),
+      #eafcff;
+  }
+
+  &--explore-basic {
+    padding: 0;
+  }
+}

@@ -1,0 +1,144 @@
+@use "@/global.scss" as *;
+
+.social-media-card-container {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    .social-media-content {
+      background-color: rgba(86, 44, 44, 0.75);
+    }
+  }
+}
+
+.social-media-card {
+  width: 100%;
+  border-radius: 16px;
+  background-color: transparent;
+
+  .ant-card-body {
+    padding: 0;
+  }
+
+  .image-container {
+    width: 100%;
+    position: relative;
+  }
+}
+
+.social-media-image {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+
+  @include respond-to("tablet-landscape") {
+    height: 320px;
+  }
+
+  @include respond-to("tablet-portrait") {
+    height: 280px;
+  }
+
+  @include respond-to("mobile") {
+    height: 260px;
+  }
+}
+
+.social-media-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: rgba(86, 44, 44, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 0 0 16px 16px;
+  transition: background-color 0.3s ease;
+
+  @include respond-to("tablet-portrait") {
+    padding: 14px 16px;
+  }
+
+  @include respond-to("mobile") {
+    padding: 12px 14px;
+  }
+}
+
+.text-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include respond-to("mobile") {
+    gap: 6px;
+  }
+}
+
+.username {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+
+  @include respond-to("tablet-portrait") {
+    font-size: 16px;
+  }
+
+  @include respond-to("mobile") {
+    font-size: 14px;
+  }
+}
+
+.instagram-icon,
+.arrow-icon {
+  width: 28px;
+  height: 28px;
+
+  @include respond-to("tablet-portrait") {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include respond-to("mobile") {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@include respond-to("desktop") {
+  .social-media-card-container {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
+
+@include respond-to("tablet-landscape") {
+  .social-media-card-container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@include respond-to("tablet-portrait") {
+  .social-media-card-container {
+    max-width: 280px;
+  }
+}
+
+@include respond-to("mobile") {
+  .social-media-card-container {
+    max-width: 100%;
+    width: 100%;
+  }
+}

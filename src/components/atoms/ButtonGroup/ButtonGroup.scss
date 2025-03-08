@@ -1,0 +1,84 @@
+@use "@/global.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+
+  @include respond-to("mobile") {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+}
+
+.clear-button {
+  height: 48px;
+  background-color: #ffffff;
+  color: #562c2c;
+  border: 1px solid rgba(86, 44, 44, 0.3);
+  border-radius: 33px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: capitalize;
+  transition: all 0.2s ease-in-out;
+  padding: 12px 48px;
+
+  @include respond-to("mobile") {
+    height: 44px;
+    font-size: 16px;
+    padding: 10px 24px;
+    width: 100%;
+  }
+}
+
+.submit-button {
+  height: 48px;
+  background-color: #f2542d;
+  color: #ffffff;
+  border: none;
+  border-radius: 33px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: capitalize;
+  padding: 12px 48px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  @include respond-to("mobile") {
+    height: 44px;
+    font-size: 16px;
+    padding: 10px 24px;
+    width: 100%;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+
+    @include respond-to("mobile") {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:hover {
+    background-color: #f2542d !important;
+    color: #ffffff !important;
+  }
+
+  .ant-btn-icon {
+    display: flex;
+  }
+}

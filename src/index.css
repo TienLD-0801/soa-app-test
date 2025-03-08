@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  --primary-color: #f2542d;
+  --secondary-color: #562c2c;
+  --text-color: #666666;
+  --light-bg: #fff6f4;
+  --border-color: rgba(86, 44, 44, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Hide spinners on number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+/* Common utility classes */
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Ant Design customizations */
+.ant-menu-horizontal {
+  border-bottom: none !important;
+}
+
+.ant-btn-primary {
+  background-color: var(--primary-color) !important;
+}

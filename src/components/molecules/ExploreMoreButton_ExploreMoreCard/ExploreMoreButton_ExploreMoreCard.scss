@@ -1,0 +1,119 @@
+.explore-more-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+
+  span {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #666666;
+    text-transform: uppercase;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .underline {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #666666;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    .underline {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.explore-more-card {
+  width: 100%;
+  max-width: 340px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: inherit;
+
+  .card-image {
+    width: 100%;
+    height: 340px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .text-container {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .title {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        color: #f2542d;
+        margin: 0;
+      }
+
+      .subtitle {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 32px;
+        color: #222222;
+        margin: 0;
+      }
+    }
+
+    .button-container {
+      display: flex;
+      gap: 16px;
+      padding-left: 8px;
+
+      .vertical-line {
+        width: 0.5px;
+        background-color: #bbbbbb;
+      }
+
+      .description {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: rgba(86, 44, 44, 0.8);
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-more-card {
+    max-width: 100%;
+  }
+}
+
+:global {
+  .ant-card-body {
+    padding: 0;
+  }
+}

@@ -1,0 +1,118 @@
+.experiences-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 713px;
+  gap: 60px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    gap: 30px;
+  }
+}
+
+.experiences-card-title {
+  font-family: "Iowan Old Style", serif;
+  font-weight: 700 !important;
+  font-size: 48px !important;
+  line-height: 60px !important;
+  text-transform: uppercase;
+  color: #f2542d !important;
+  margin: 0;
+
+  @media (max-width: 992px) {
+    font-size: 42px !important;
+    line-height: 52px !important;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px !important;
+    line-height: 42px !important;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px !important;
+    line-height: 36px !important;
+  }
+}
+
+.experiences-card-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+}
+
+.experiences-card-description-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 11px;
+}
+
+.experiences-card-description-header {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: center;
+
+  @media (max-width: 480px) {
+    gap: 24px;
+  }
+}
+
+.line {
+  width: 81px;
+  height: 2px;
+  background-color: #bbbbbb;
+
+  @media (max-width: 480px) {
+    width: 40px;
+  }
+}
+
+.experiences-card-description-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600 !important;
+  font-size: 28px !important;
+  text-transform: capitalize;
+  color: #562c2c !important;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 24px !important;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px !important;
+  }
+}
+
+.experiences-card-description-text {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 0;
+  width: 100%;
+}
+
+.experiences-card-description {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  line-height: 26px !important;
+  color: rgba(86, 44, 44, 0.8) !important;
+  margin: 0;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 15px !important;
+    line-height: 22px !important;
+  }
+}

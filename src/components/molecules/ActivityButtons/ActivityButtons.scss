@@ -1,0 +1,61 @@
+.activity-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px;
+  min-width: min-content;
+  background-color: inherit;
+  flex-wrap: wrap; // Add this to allow wrapping on smaller screens
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.activity-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  min-width: 156px;
+  height: 44px;
+  background-color: #fafafa;
+  border-radius: 40px;
+  border: 1.5px solid rgba(242, 84, 45, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #f8f8f8;
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  .activity-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .activity-label {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #562c2c;
+    text-transform: capitalize;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}

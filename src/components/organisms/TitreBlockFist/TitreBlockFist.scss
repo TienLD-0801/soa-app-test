@@ -1,0 +1,83 @@
+@use "@/global.scss" as *;
+
+.block-first-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: $spacing-xl 20px;
+
+  @include respond-to("desktop") {
+    padding: $spacing-lg 40px;
+  }
+
+  @include respond-to("tablet-landscape") {
+    padding: $spacing-lg 30px;
+  }
+
+  @include respond-to("tablet-portrait") {
+    padding: $spacing-md 20px;
+  }
+
+  @include respond-to("mobile") {
+    padding: $spacing-md 16px;
+  }
+}
+
+.adventure-layout {
+  &__subtitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #562c2c;
+    margin: $spacing-sm 0 $spacing-lg;
+    text-align: center;
+
+    @include respond-to("tablet-portrait") {
+      font-size: 20px;
+      margin: $spacing-sm 0 $spacing-md;
+    }
+
+    @include respond-to("mobile") {
+      font-size: 18px;
+      margin: $spacing-xs 0 $spacing-md;
+    }
+  }
+}
+
+.adventure-cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: $spacing-md;
+  width: 100%;
+  flex-wrap: wrap;
+
+  @include respond-to("tablet-landscape") {
+    gap: $spacing-sm;
+  }
+
+  @include respond-to("tablet-portrait") {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .adventure-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 397px;
+    margin-bottom: $spacing-md;
+
+    @include respond-to("tablet-portrait") {
+      flex: none;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    @include respond-to("mobile") {
+      margin-bottom: $spacing-sm;
+    }
+  }
+}

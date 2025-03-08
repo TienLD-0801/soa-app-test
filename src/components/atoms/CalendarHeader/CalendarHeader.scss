@@ -1,0 +1,59 @@
+@use "@/global.scss" as *;
+
+.calendar-header {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1176px;
+  padding: 0 16px;
+  box-sizing: border-box;
+
+  @include respond-to("tablet-portrait") {
+    padding: 0 8px;
+  }
+
+  @include respond-to("mobile") {
+    padding: 0 4px;
+  }
+
+  .nav-button {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    img {
+      width: 24px;
+      height: 24px;
+
+      @include respond-to("mobile") {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .month-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #562c2cff;
+    text-align: center;
+
+    @include respond-to("tablet-portrait") {
+      font-size: 18px;
+    }
+
+    @include respond-to("mobile") {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@use "@/global.scss" as *;
+
+.file-attachment-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+
+  @include respond-to("tablet-portrait") {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.file-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #562c2c;
+  text-transform: capitalize;
+  width: 120px;
+
+  @include respond-to("tablet-landscape") {
+    font-size: 22px;
+  }
+
+  @include respond-to("tablet-portrait") {
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  @include respond-to("mobile") {
+    font-size: 18px;
+  }
+}
+
+.attachment-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.paperclip-icon {
+  width: 32px;
+  height: 32px;
+
+  @include respond-to("mobile") {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.attachment-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #1e88f9;
+  letter-spacing: -0.14px;
+
+  @include respond-to("mobile") {
+    font-size: 18px;
+  }
+}
+
+.file-type-hint {
+  margin-left: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #999999;
+  letter-spacing: -0.126px;
+
+  @include respond-to("mobile") {
+    font-size: 16px;
+    margin-left: 4px;
+  }
+}

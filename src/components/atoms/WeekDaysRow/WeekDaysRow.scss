@@ -1,0 +1,42 @@
+@use "@/global.scss" as *;
+
+.week-days-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 24px;
+  gap: 14px;
+
+  @include respond-to("tablet-portrait") {
+    gap: 10px;
+  }
+
+  @include respond-to("mobile") {
+    gap: 6px;
+    height: 20px;
+  }
+
+  .week-day {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.126px;
+    color: #562c2c;
+    text-align: center;
+
+    @include respond-to("tablet-portrait") {
+      font-size: 16px;
+    }
+
+    @include respond-to("mobile") {
+      font-size: 14px;
+      letter-spacing: -0.1px;
+    }
+  }
+}

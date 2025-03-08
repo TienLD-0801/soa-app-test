@@ -1,0 +1,45 @@
+@use "@/global.scss" as *;
+
+.social-media-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xl;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%),
+    #eafcff;
+  width: 100%;
+  overflow-x: hidden;
+
+  @include respond-to("tablet-portrait") {
+    gap: $spacing-lg;
+    padding: $spacing-lg $spacing-sm;
+  }
+
+  @include respond-to("mobile") {
+    gap: $spacing-md;
+    padding: $spacing-md $spacing-sm;
+  }
+}
+
+.social-media-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-md;
+  width: 100%;
+  max-width: 1240px;
+
+  @include respond-to("tablet-landscape") {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: $spacing-sm;
+  }
+
+  @include respond-to("tablet-portrait") {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: $spacing-sm;
+  }
+
+  @include respond-to("mobile") {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

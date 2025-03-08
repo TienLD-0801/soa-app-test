@@ -1,0 +1,96 @@
+@use "@/global.scss" as *;
+
+.experiences-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1240px;
+  height: auto;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-md;
+
+  @include respond-to("tablet-landscape") {
+    padding: $spacing-lg $spacing-md;
+  }
+
+  @include respond-to("tablet-portrait") {
+    padding: $spacing-md $spacing-sm;
+  }
+
+  @include respond-to("mobile") {
+    padding: $spacing-md $spacing-sm;
+  }
+}
+
+.experiences-section-container {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
+  align-items: flex-start;
+
+  @include respond-to("tablet-landscape") {
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  @include respond-to("mobile") {
+    gap: $spacing-md;
+  }
+}
+
+.ice-cream-image {
+  width: 527px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  @include respond-to("desktop") {
+    width: 45%;
+    height: auto;
+    aspect-ratio: 527 / 600;
+  }
+
+  @include respond-to("tablet-landscape") {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    aspect-ratio: 16 / 9;
+  }
+
+  @include respond-to("tablet-portrait") {
+    max-height: 400px;
+  }
+
+  @include respond-to("mobile") {
+    height: 300px;
+    border-radius: 6px;
+  }
+}
+
+.footer-icons-container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+  padding-top: $spacing-lg;
+  padding-bottom: $spacing-xl;
+  align-items: center;
+  width: 100%;
+
+  @include respond-to("tablet-portrait") {
+    gap: $spacing-lg;
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-lg;
+  }
+
+  @include respond-to("mobile") {
+    gap: $spacing-md;
+    padding-top: $spacing-sm;
+    padding-bottom: $spacing-md;
+  }
+}

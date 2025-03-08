@@ -1,0 +1,91 @@
+@use "@/global.scss" as *;
+
+.input-fields-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  background: inherit;
+
+  @include respond-to("mobile") {
+    gap: 16px;
+  }
+}
+
+.input-field-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+
+  @include respond-to("tablet-portrait") {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.field-label {
+  width: 120px;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #562c2c;
+  text-transform: capitalize;
+
+  @include respond-to("tablet-landscape") {
+    font-size: 22px;
+  }
+
+  @include respond-to("tablet-portrait") {
+    width: 100%;
+    margin-bottom: 4px;
+    font-size: 20px;
+  }
+
+  @include respond-to("mobile") {
+    font-size: 18px;
+  }
+}
+
+.input-wrapper {
+  flex-grow: 1;
+  width: 100%;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0px 0px 30px 0px rgba(242, 84, 45, 0.1);
+}
+
+.text-input {
+  width: 100%;
+  height: 51px;
+  padding: 12px 16px;
+  border-radius: 123px;
+  border: 1px solid rgba(86, 44, 44, 0.3);
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.126px;
+  color: #000000;
+  box-sizing: border-box;
+
+  @include respond-to("mobile") {
+    height: 45px;
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+
+  &::placeholder {
+    color: #aaaaaa;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: rgba(86, 44, 44, 0.5);
+  }
+
+  &:hover {
+    border-color: rgba(86, 44, 44, 0.4);
+  }
+}

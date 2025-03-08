@@ -1,0 +1,304 @@
+@use "@/global.scss" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px 24px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(238, 238, 238, 0.2);
+  background-color: rgba(86, 44, 44, 0.7);
+  backdrop-filter: blur(7.5px);
+
+  @include respond-to("mobile") {
+    padding: 12px 16px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__logo {
+    color: #fff;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    flex-shrink: 0;
+
+    @include respond-to("mobile") {
+      font-size: 20px;
+    }
+  }
+
+  &__mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    padding: 0;
+    margin-left: auto;
+
+    @include respond-to("tablet-portrait") {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0 auto;
+
+    @include respond-to("tablet-portrait") {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(86, 44, 44, 0.95);
+      flex-direction: column;
+      justify-content: center;
+      gap: 32px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      padding-top: 60px;
+      z-index: 1000;
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__nav-item-container {
+    position: relative;
+  }
+
+  &__nav-item {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #f2542d;
+    }
+
+    &.dropdown {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .dropdown-icon {
+      font-size: 12px;
+      margin-left: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    @include respond-to("tablet-portrait") {
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+
+  &__nav-dropdown {
+    .ant-dropdown-menu {
+      background: rgba(86, 44, 44, 0.9);
+      backdrop-filter: blur(7.5px);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .ant-dropdown-menu-item {
+      padding: 8px 16px;
+      color: white;
+      font-family: Poppins;
+      font-size: 14px;
+
+      &:hover {
+        background-color: rgba(242, 84, 45, 0.8);
+        color: white;
+      }
+
+      a {
+        color: white;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    .ant-dropdown-arrow {
+      border-top-color: rgba(86, 44, 44, 0.9) !important;
+      border-left-color: rgba(86, 44, 44, 0.9) !important;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include respond-to("tablet-portrait") {
+      display: none;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__icon-wrapper {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-to("mobile") {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__icon {
+    width: 24px !important;
+    height: 24px !important;
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+    object-fit: cover;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    @include respond-to("mobile") {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+
+  &__button {
+    background-color: #f2542d;
+    color: white;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(242, 84, 45, 0.3);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #e64525;
+      transform: translateY(-2px);
+      box-shadow: 0px 6px 12px rgba(242, 84, 45, 0.4);
+    }
+  }
+
+  &__mobile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 40px;
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  &__mobile-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  &__mobile-icon-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    span {
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      color: white;
+    }
+
+    .mobile-dropdown-icon {
+      margin-left: auto;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  &__mobile-button {
+    background-color: #f2542d;
+    color: white;
+    border: none;
+    height: 48px;
+    padding: 0 32px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 240px;
+
+    &:hover {
+      background-color: #e64525;
+    }
+  }
+}
+
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+@include respond-to("tablet-landscape") {
+  .header {
+    &__navigation {
+      gap: 16px;
+    }
+
+    &__nav-item {
+      font-size: 14px;
+    }
+
+    &__actions {
+      gap: 16px;
+    }
+  }
+}
